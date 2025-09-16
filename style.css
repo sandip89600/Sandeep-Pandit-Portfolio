@@ -7,11 +7,12 @@
     --accent-orange: #ff6600; /* Adjusted from screenshot */
     --accent-blue: #007bff; /* For specific elements if needed */
     --border-color: #333333;
+    --base-color:#000411;
     --font-family: 'Inter', sans-serif;
     --section-gap: 80px;
     --card-border-radius: 8px;
 }
-.dark-mode{
+.darkmode{
         --bg-dark: #fff;
     --card-bg: #e8e9ed;
     --text-light: #111528;
@@ -68,6 +69,53 @@ p {
     margin-bottom: 1em; /* Adjust as per design */
 }
 
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    top: 23px;
+    background: linear-gradient(145deg, #000, #222); /* sleek gradient */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);          /* soft shadow */
+    transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#theme-switch:hover {
+    transform: scale(1.1); /* little zoom on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+#theme-switch i:first-child {
+    display: block;
+    color: white; /* sun icon bright in light mode */
+    font-size: 20px;
+}
+
+#theme-switch i:last-child {
+    display: none;
+}
+
+/* Dark Mode */
+.darkmode #theme-switch {
+    background: linear-gradient(145deg, #fff, #ddd); /* light gradient */
+    box-shadow: 0 4px 12px rgba(255,255,255,0.5);
+}
+
+.darkmode #theme-switch i:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch i:last-child {
+    display: block;
+    color: #222; /* dark moon icon */
+    font-size: 20px;
+}
 /* Reusable Classes */
 .common-padding {
     padding: var(--section-gap) 0;
