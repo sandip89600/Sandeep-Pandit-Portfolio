@@ -7,19 +7,9 @@
     --accent-orange: #ff6600; /* Adjusted from screenshot */
     --accent-blue: #007bff; /* For specific elements if needed */
     --border-color: #333333;
-    --base-color:#000411;
     --font-family: 'Inter', sans-serif;
     --section-gap: 80px;
     --card-border-radius: 8px;
-}
-.darkmode{
-        --bg-dark: #fff;
-    --card-bg: #e8e9ed;
-    --text-light: #111528;
-    --text-muted: #888888;
-    --accent-orange: #ff6600; /* Adjusted from screenshot */
-    --accent-blue: #007bff; /* For specific elements if needed */
-    --border-color: #333333;
 }
 
 /* Base Styles */
@@ -67,49 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-bottom: 1em; /* Adjust as per design */
-}
-
-
-#theme-switch {
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    right: 34px;
-    top:21px;
-    background: black; /* Light mode background */
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-#theme-switch i:first-child {
-    display: block;
-    color: white; /* Sun icon in light mode */
-    font-size: 20px;
-}
-
-#theme-switch i:last-child {
-    display: none;
-}
-
-/* Dark Mode Styles */
-.darkmode #theme-switch {
-    background: white;
-}
-
-.darkmode #theme-switch i:first-child {
-    display: none;
-}
-
-.darkmode #theme-switch i:last-child {
-    display: block;
-    color: black; /* Moon icon in dark mode */
-    font-size: 20px;
 }
 
 /* Reusable Classes */
@@ -772,10 +719,7 @@ p {
 }
 
 
-/* ============================= */
-/* Responsive Adjustments        */
-/* ============================= */
-
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .hero-section .hero-inner {
         flex-direction: column;
@@ -784,13 +728,13 @@ p {
     }
 
     .hero-content {
-        order: 2;
+        order: 2; /* Content below image on smaller screens */
         min-width: unset;
         width: 100%;
     }
 
     .hero-image {
-        order: 1;
+        order: 1; /* Image above content on smaller screens */
         margin-bottom: 0;
     }
 
@@ -815,8 +759,8 @@ p {
     }
 
     .experience-timeline {
-        padding-left: 0;
-        max-width: 600px;
+        padding-left: 0; /* Remove padding for smaller screens */
+        max-width: 600px; /* Constrain width */
         margin-left: auto;
         margin-right: auto;
     }
@@ -829,43 +773,17 @@ p {
     .timeline-card {
         margin-left: 0;
         margin-bottom: 40px;
-        width: 100%;
+        width: 100%; /* Full width */
     }
 
     .timeline-card::before {
         left: 50%;
         transform: translateX(-50%);
-        top: -20px;
+        top: -20px; /* Position dot above card */
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* ✅ Theme Button for Tablet/Desktop */
-    #theme-switch {
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background-color: var(--button-bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        left: -15px;
-        top: -5px;
-        cursor: pointer;
-        margin-left: 10px;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    #theme-switch i {
-        font-size: 18px;
-        color: var(--button-icon);
-    }
-
-    #theme-switch:active {
-        transform: scale(0.9);
+        grid-template-columns: 1fr; /* Stack skill categories */
     }
 }
 
@@ -902,16 +820,15 @@ p {
     }
 
     .about-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack stats on very small screens */
     }
-
     .stat-item {
-        max-width: 300px;
+        max-width: 300px; /* Limit width */
         margin: 0 auto;
     }
 
     .service-card {
-        max-width: 300px;
+        max-width: 300px; /* Limit width */
         margin: 0 auto;
     }
 
@@ -931,19 +848,6 @@ p {
     .contact-btn {
         padding: 12px 30px;
         font-size: 1em;
-    }
-
-    /* ✅ Theme Button for Tablet */
-    #theme-switch {
-        height: 38px;
-        width: 38px;
-        position: absolute;
-        left: 20px;
-        top: -8px;
-    }
-
-    #theme-switch i {
-        font-size: 16px;
     }
 }
 
@@ -968,7 +872,6 @@ p {
         flex-direction: column;
         align-items: center;
     }
-
     .btn {
         width: 100%;
         max-width: 250px;
@@ -998,106 +901,5 @@ p {
 
     .footer-social-links {
         gap: 15px;
-    }
-
-    /* ✅ Theme Button for Mobile */
-    #theme-switch {
-        height: 35px;
-        width: 35px;
-        background-color: var(--button-bg);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        cursor: pointer;
-        margin-left: 110px;
-        position: relative;
-    }
-
-    #theme-switch i {
-        font-size: 15px;
-        color: var(--button-icon);
-    }
-
-    #theme-switch:active {
-        transform: scale(0.9);
-    }
-}
-@media (max-width: 300px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    .navbar .logo {
-        font-size: 1.4em;
-    }
-
-    .hero-content .name {
-        font-size: 2em;
-    }
-
-    .hero-content .title {
-        font-size: 1.5em;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .stat-circle {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8em;
-    }
-
-    .service-icon {
-        font-size: 3em;
-    }
-
-    .job-title {
-        font-size: 1.2em;
-    }
-
-    .job-duration {
-        font-size: 0.8em;
-    }
-
-    .project-card .project-title {
-        font-size: 1.3em;
-    }
-
-    .footer-social-links {
-        gap: 15px;
-    }
-
-    /* ✅ Theme Button for Mobile */
-    #theme-switch {
-        height: 35px;
-        width: 35px;
-        background-color: var(--button-bg);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        cursor: pointer;
-        margin-left: 110px;
-        position: relative;
-    }
-
-    #theme-switch i {
-        font-size: 15px;
-        color: var(--button-icon);
-    }
-
-    #theme-switch:active {
-        transform: scale(0.9);
     }
 }

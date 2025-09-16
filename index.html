@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandeep Pandit - Full Stack Web Developer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="darkmode.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="darkmode">
+<body>
     <header class="navbar">
         <div class="container nav-container">
             <h1 class="logo">Sandeep Pandit</h1>
@@ -19,12 +18,6 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contacts</a></li>
-                    <li><a href="#">
-    <button id="theme-switch">
-        <i class="fa-solid fa-sun"></i>
-        <i class="fa-solid fa-moon"></i>
-    </button>
-</a></li>
                 </ul>
             </nav>
         </div>
@@ -314,26 +307,6 @@
         navLinks[0].classList.add('active'); // Default to home if no other section is in view
     }
 });
-
-    let darkmode = localStorage.getItem('darkmode')
-    const themeSwitch = document.getElementById('theme-switch')
-
-    const enableDarkmode = () =>{
-        document.body.classList.add('darkmode')
-        localStorage.setItem('darkmode','active') 
-    }
-
-const disableDarkmode = () =>{
-    document.body.classList.remove('darkmode')
-    localStorage.removeItem('darkmode')
-}
-
-    if (darkmode === 'active') enableDarkmode()
-
-    themeSwitch.addEventListener("click", () =>{
-        darkmode = localStorage.getItem('darkmode')
-        darkmode !== 'active' ? enableDarkmode() : disableDarkmode()
-    })
     </script>
 </body>
 </html>
