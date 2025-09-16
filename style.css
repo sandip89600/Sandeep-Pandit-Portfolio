@@ -1024,3 +1024,80 @@ p {
         transform: scale(0.9);
     }
 }
+@media (max-width: 390px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar .logo {
+        font-size: 1.4em;
+    }
+
+    .hero-content .name {
+        font-size: 2em;
+    }
+
+    .hero-content .title {
+        font-size: 1.5em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .stat-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8em;
+    }
+
+    .service-icon {
+        font-size: 3em;
+    }
+
+    .job-title {
+        font-size: 1.2em;
+    }
+
+    .job-duration {
+        font-size: 0.8em;
+    }
+
+    .project-card .project-title {
+        font-size: 1.3em;
+    }
+
+    .footer-social-links {
+        gap: 15px;
+    }
+
+    /* ✅ Theme Button for Mobile */
+    #theme-switch {
+        height: 35px;
+        width: 35px;
+        background-color: var(--button-bg);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: 110px;
+        position: relative;
+    }
+
+    #theme-switch i {
+        font-size: 15px;
+        color: var(--button-icon);
+    }
+
+    #theme-switch:active {
+        transform: scale(0.9);
+    }
+}
