@@ -79,21 +79,17 @@ p {
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 20px;
-    top: 23px;
-    background: linear-gradient(145deg, #000, #222); /* sleek gradient */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);          /* soft shadow */
-    transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-#theme-switch:hover {
-    transform: scale(1.1); /* little zoom on hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    right: 10px;
+    top: 70px;
+    background: black; /* Light mode background */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 #theme-switch i:first-child {
     display: block;
-    color: white; /* sun icon bright in light mode */
+    color: white; /* Sun icon in light mode */
     font-size: 20px;
 }
 
@@ -101,10 +97,9 @@ p {
     display: none;
 }
 
-/* Dark Mode */
+/* Dark Mode Styles */
 .darkmode #theme-switch {
-    background: linear-gradient(145deg, #fff, #ddd); /* light gradient */
-    box-shadow: 0 4px 12px rgba(255,255,255,0.5);
+    background: white;
 }
 
 .darkmode #theme-switch i:first-child {
@@ -113,9 +108,10 @@ p {
 
 .darkmode #theme-switch i:last-child {
     display: block;
-    color: #222; /* dark moon icon */
+    color: black; /* Moon icon in dark mode */
     font-size: 20px;
 }
+
 /* Reusable Classes */
 .common-padding {
     padding: var(--section-gap) 0;
@@ -958,62 +954,5 @@ p {
 
     .footer-social-links {
         gap: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    #theme-switch {
-        height: 45px;
-        width: 45px;
-        top: 15px;
-        right: 15px;
-    }
-
-    #theme-switch i {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    #theme-switch {
-        height: 40px;
-        width: 40px;
-        top: 12px;
-        right: 12px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.4);
-    }
-
-    #theme-switch i {
-        font-size: 16px;
-    }
-}
-
-/* Better mobile font sizes */
-@media (max-width: 480px) {
-    h1, .hero-content .name {
-        font-size: 1.8em;
-    }
-
-    .hero-content .title {
-        font-size: 1.3em;
-    }
-
-    p, .stat-text, .project-description {
-        font-size: 0.9em;
-    }
-
-    .section-title {
-        font-size: 1.7em;
-    }
-}
-
-/* Adjust padding for smaller devices */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-    }
-
-    .common-padding {
-        padding: 40px 0;
     }
 }
