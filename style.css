@@ -851,6 +851,9 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        left: -15px;
+        top: -5px;
         cursor: pointer;
         margin-left: 10px;
         transition: background 0.3s ease, transform 0.2s ease;
@@ -934,7 +937,9 @@ p {
     #theme-switch {
         height: 38px;
         width: 38px;
-        margin-left: 10px;
+        position: absolute;
+        left: 20px;
+        top: -8px;
     }
 
     #theme-switch i {
@@ -1006,7 +1011,7 @@ p {
         justify-content: center;
         border-radius: 50%;
         cursor: pointer;
-        margin-left: 5px;
+        margin-left: 110px;
         position: relative;
     }
 
