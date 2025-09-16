@@ -960,3 +960,60 @@ p {
         gap: 15px;
     }
 }
+
+@media (max-width: 768px) {
+    #theme-switch {
+        height: 45px;
+        width: 45px;
+        top: 15px;
+        right: 15px;
+    }
+
+    #theme-switch i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    #theme-switch {
+        height: 40px;
+        width: 40px;
+        top: 12px;
+        right: 12px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    }
+
+    #theme-switch i {
+        font-size: 16px;
+    }
+}
+
+/* Better mobile font sizes */
+@media (max-width: 480px) {
+    h1, .hero-content .name {
+        font-size: 1.8em;
+    }
+
+    .hero-content .title {
+        font-size: 1.3em;
+    }
+
+    p, .stat-text, .project-description {
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 1.7em;
+    }
+}
+
+/* Adjust padding for smaller devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .common-padding {
+        padding: 40px 0;
+    }
+}
