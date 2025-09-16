@@ -11,6 +11,15 @@
     --section-gap: 80px;
     --card-border-radius: 8px;
 }
+.dark-mode{
+        --bg-dark: #fff;
+    --card-bg: #e8e9ed;
+    --text-light: #111528;
+    --text-muted: #888888;
+    --accent-orange: #ff6600; /* Adjusted from screenshot */
+    --accent-blue: #007bff; /* For specific elements if needed */
+    --border-color: #333333;
+}
 
 /* Base Styles */
 * {
