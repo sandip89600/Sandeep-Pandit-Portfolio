@@ -1024,7 +1024,7 @@ p {
         transform: scale(0.9);
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 300px) {
     .container {
         padding: 0 15px;
     }
