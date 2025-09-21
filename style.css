@@ -1,7 +1,7 @@
 /* Custom Properties (Variables) */
 :root {
-    --bg-dark: #191919;
-    --card-bg: #222222;
+    --bg-dark: #000000;
+    --card-bg: #0c0c0c;
     --text-light: #f5f5f5;
     --text-muted: #888888;
     --accent-orange: #ff6600;
