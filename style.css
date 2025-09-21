@@ -4,14 +4,95 @@
     --card-bg: #222222;
     --text-light: #f5f5f5;
     --text-muted: #888888;
-    --accent-orange: #ff6600; /* Adjusted from screenshot */
-    --accent-blue: #007bff; /* For specific elements if needed */
+    --accent-orange: #ff6600;
+    --accent-blue: #007bff; 
     --border-color: #333333;
     --font-family: 'Inter', sans-serif;
     --section-gap: 80px;
     --card-border-radius: 8px;
 }
 
+
+/* Hamburger Menu styles */
+.hamburger-menu {
+    display: none; /* Hide on large screens */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-light);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .navbar .nav-container {
+        flex-direction: row; /* Keep logo and controls on one line */
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none; /* Hide regular menu */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-dark); /* Full-screen overlay */
+        transition: transform 0.4s ease-in-out;
+        z-index: 999;
+        transform: translateX(-100%);
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nav-links ul li a {
+        font-size: 1.5em;
+        color: var(--text-light); /* Ensure links are visible in dark overlay */
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-controls {
+        order: 2;
+    }
+}
 /* Base Styles */
 * {
     margin: 0;
@@ -183,6 +264,7 @@ p {
 .navbar nav ul li a.active::after { /* Active state for current section */
     width: 100%;
 }
+
 
 /* Hero Section */
 .hero-section {
