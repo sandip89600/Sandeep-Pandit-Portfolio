@@ -901,7 +901,8 @@ p {
     }
 
     .hero-social-links {
-        justify-content: center;
+        position: relative;
+        left:100px;
     }
 
     .hero-image img {
