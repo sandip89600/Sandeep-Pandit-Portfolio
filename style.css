@@ -21,12 +21,12 @@ body.theme-light {
     --text-light: #191919;
     --text-muted: #555555;
     --border-color: #dddddd;
-    --accent-orange: #d95300; /* Slightly darker orange for contrast */
+    --accent-orange: #d95300; 
 }
 
 /* Night Mode Variables (Extra Dark/Blue Shifted) */
 body.theme-night {
-    --bg-dark: #0f172a; /* Slate-blue dark */
+    --bg-dark: #0f172a; 
     --card-bg: #1e293b; 
     --text-light: #e2e8f0;
     --text-muted: #94a3b8;
@@ -46,12 +46,11 @@ body {
     line-height: 1.6;
     color: var(--text-light);
     background-color: var(--bg-dark);
-    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+    transition: background-color 0.5s ease, color 0.5s ease; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ... (Container, A, UL, Hx, P styles - unchanged, using variables) ... */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -83,9 +82,7 @@ p {
     margin-bottom: 1em; 
 }
 
-
 /* Reusable Classes */
-/* ... (common-padding, section-title, btn, primary-btn, secondary-btn styles - unchanged, using variables) ... */
 .common-padding {
     padding: var(--section-gap) 0;
 }
@@ -130,7 +127,7 @@ p {
 
 .primary-btn {
     background-color: var(--accent-orange);
-    color: var(--bg-dark); /* Darker text for better contrast */
+    color: var(--bg-dark); 
     border: 2px solid var(--accent-orange);
 }
 
@@ -148,12 +145,12 @@ p {
 
 .secondary-btn:hover {
     background-color: var(--accent-orange);
-    color: var(--bg-dark); /* Darker text for better contrast */
+    color: var(--bg-dark); 
     text-decoration: none;
 }
 
 
-/* Navbar */
+/* --- Navbar & Controls (Hamburger Menu) --- */
 .navbar {
     background-color: var(--bg-dark);
     padding: 20px 0;
@@ -188,7 +185,7 @@ p {
 }
 
 .menu-toggle, .btn-icon-only {
-    display: none; /* Hidden by default on desktop */
+    display: none; 
     background: transparent;
     border: none;
     color: var(--text-light);
@@ -232,9 +229,8 @@ p {
     width: 100%;
 }
 
-/* ... (Hero Section, About Section, Technical Skills, Experience, Projects, Contact, Footer styles - adapted to use variables) ... */
 
-/* Hero Section */
+/* --- Hero Section --- */
 .hero-section {
     background-color: var(--bg-dark);
     padding: 100px 0;
@@ -333,7 +329,7 @@ p {
     text-decoration: none;
 }
 
-/* About Section */
+/* --- About Section --- */
 .about-section {
     background-color: var(--card-bg); 
 }
@@ -377,7 +373,7 @@ p {
     height: 90px;
     border-radius: 50%;
     background-color: var(--accent-orange);
-    color: var(--bg-dark); /* Darker text for contrast on accent */
+    color: var(--bg-dark); 
     font-size: 2.2em;
     font-weight: 800;
     display: flex;
@@ -432,7 +428,7 @@ p {
     color: var(--text-light);
 }
 
-/* Technical Skills Section */
+/* --- Technical Skills Section (Progress Bars) --- */
 .technical-skills-section {
     background-color: var(--bg-dark);
 }
@@ -460,43 +456,53 @@ p {
     text-align: center;
 }
 
-.category-items, .learning-items, .soft-skills-items {
+/* Progress Bar Styles */
+.skills-bar-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px; 
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
 }
 
-.skill-item, .learning-item, .soft-skill-item {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
+.skill-bar-item {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 1em;
+}
+
+.bar-wrapper {
+    background-color: var(--bg-dark);
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.skill-item i {
-    color: var(--accent-orange);
-    font-size: 1.1em;
-    transition: color 0.3s ease;
+.skill-bar {
+    height: 100%;
+    background: var(--accent-orange);
+    width: 0; /* Initial width for animation */
+    transition: width 1.5s ease-out; /* Animation effect */
+    position: relative;
 }
 
-.skill-item:hover {
-    background-color: var(--accent-orange);
-    color: var(--bg-dark); /* Darker text for better contrast */
-    border-color: var(--accent-orange);
+.skill-bar::after {
+    content: attr(data-level);
+    position: absolute;
+    right: 5px;
+    top: -25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--text-light);
 }
 
-.skill-item:hover i {
-    color: var(--bg-dark);
-}
-
+/* Soft Skills/Learning Tags */
 .currently-learning, .soft-skills {
     background-color: var(--card-bg);
     padding: 30px;
@@ -506,13 +512,31 @@ p {
     margin-bottom: 30px; 
 }
 
+.learning-items, .soft-skills-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: center;
+}
+
+.learning-item, .soft-skill-item {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
 .learning-item:hover, .soft-skill-item:hover {
     background-color: var(--accent-orange);
     color: var(--bg-dark);
     border-color: var(--accent-orange);
 }
 
-/* Experience Section */
+/* --- Experience Section --- */
 .experience-section {
     background-color: var(--card-bg);
 }
@@ -604,9 +628,38 @@ p {
     font-size: 0.95em;
 }
 
-/* Projects Section */
+/* --- Projects Section (Filtering) --- */
 .projects-section {
     background-color: var(--bg-dark);
+}
+
+.project-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: var(--card-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-light);
+    background-color: var(--border-color);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-orange);
+    color: var(--bg-dark);
+    border-color: var(--accent-orange);
 }
 
 .project-grid {
@@ -624,12 +677,17 @@ p {
     display: flex;
     flex-direction: column; 
     justify-content: space-between; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card.hidden {
+    display: none;
+    opacity: 0;
 }
 
 .project-card .project-title {
@@ -680,7 +738,7 @@ p {
     text-decoration: underline;
 }
 
-/* Contact Section */
+/* --- Contact Section (Form Styles) --- */
 .contact-section {
     background-color: var(--card-bg);
 }
@@ -698,13 +756,53 @@ p {
     margin-right: auto;
 }
 
+.contact-form-layout {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-form-layout input[type="text"],
+.contact-form-layout input[type="email"],
+.contact-form-layout textarea {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-border-radius);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-family);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-layout input:focus,
+.contact-form-layout textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 1px var(--accent-orange);
+}
+
+.contact-form-layout textarea {
+    resize: vertical;
+}
+
 .contact-btn {
     padding: 15px 40px; 
     font-size: 1.1em;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
-/* Footer */
+.form-status-message {
+    color: var(--accent-orange);
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 15px;
+    height: 1.5em; 
+}
+
+/* --- Footer --- */
 .footer {
     background-color: var(--bg-dark);
     padding: 30px 0;
@@ -742,32 +840,30 @@ p {
     margin-bottom: 0;
 }
 
-/* --- Responsive Adjustments (Hamburger Menu & Mobile First) --- */
 
-/* Mobile Styling (<= 1024px) */
+/* --- Responsive Adjustments (Mobile First) --- */
+
 @media (max-width: 1024px) {
-    
-    /* 1. Navbar: Show Controls, Hide Default Menu */
+    /* 1. Navbar: Hamburger Menu Styles */
     .menu-toggle, .btn-icon-only {
-        display: block; /* Show hamburger and theme button */
+        display: block; 
     }
 
     .navbar nav {
-        /* Mobile Menu Container */
         position: absolute;
-        top: 100%; /* Below the navbar */
+        top: 100%; 
         left: 0;
         width: 100%;
         background-color: var(--bg-dark);
         border-top: 1px solid var(--border-color);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        max-height: 0; /* Hidden by default */
+        max-height: 0; 
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
     }
 
     .navbar nav.open {
-        max-height: 300px; /* Max height to slide down */
+        max-height: 300px; 
         padding: 10px 0;
     }
 
@@ -784,10 +880,6 @@ p {
         color: var(--text-light);
         font-size: 1.1em;
         font-weight: 600;
-    }
-
-    .navbar nav ul li a::after {
-        left: 0;
     }
 
     /* 2. Hero Section Adjustments */
@@ -845,7 +937,7 @@ p {
     }
 
     .skills-grid, .project-grid {
-        grid-template-columns: 1fr; /* Stack categories/projects */
+        grid-template-columns: 1fr; 
     }
 
     .about-stats {
@@ -853,7 +945,6 @@ p {
     }
 }
 
-/* Smaller Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
     .common-padding {
         padding: 60px 0;
@@ -873,7 +964,7 @@ p {
     }
 
     .about-stats {
-        grid-template-columns: 1fr; /* Stack stats vertically */
+        grid-template-columns: 1fr; 
     }
     .stat-item, .service-card {
         max-width: 300px; 
@@ -887,5 +978,12 @@ p {
     .btn {
         width: 100%;
         max-width: 250px;
+    }
+
+    .project-filters {
+        /* Allow buttons to wrap better on small screens */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

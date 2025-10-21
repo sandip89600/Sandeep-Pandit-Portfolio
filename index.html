@@ -123,29 +123,85 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3 class="category-title">Frontend Technologies</h3>
-                    <div class="category-items">
-                        <div class="skill-item"><i class="fas fa-code"></i>HTML5</div>
-                        <div class="skill-item"><i class="fas fa-code"></i>CSS3</div>
-                        <div class="skill-item"><i class="fas fa-code"></i>JavaScript</div>
-                        <div class="skill-item"><i class="fas fa-code"></i>Bootstrap</div>
-                        <div class="skill-item"><i class="fas fa-code"></i>Responsive Web Design</div>
-                        <div class="skill-item"><i class="fas fa-code"></i>Cross-browser Compatibility</div>
+                    <div class="skills-bar-container">
+                        <div class="skill-bar-item">
+                            <span class="skill-name">HTML5</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">CSS3</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">Bootstrap</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">Responsive Web Design</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="95%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="skill-category">
                     <h3 class="category-title">Web Development</h3>
-                    <div class="category-items">
-                        <div class="skill-item"><i class="fas fa-globe"></i>SEO Optimization</div>
-                        <div class="skill-item"><i class="fas fa-chart-line"></i>Web Performance Optimization</div>
-                        <div class="skill-item"><i class="fas fa-user-friends"></i>User Experience Design</div>
+                    <div class="skills-bar-container">
+                        <div class="skill-bar-item">
+                            <span class="skill-name">SEO Optimization</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">Web Performance Optimization</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">User Experience Design</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="75%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3 class="category-title">Development Tools</h3>
-                    <div class="category-items">
-                        <div class="skill-item"><i class="fas fa-tools"></i>VS Code</div>
-                        <div class="skill-item"><i class="fas fa-github"></i>Git & GitHub</div>
-                        <div class="skill-item"><i class="fas fa-desktop"></i>Browser Developer Tools</div>
+                    <div class="skills-bar-container">
+                        <div class="skill-bar-item">
+                            <span class="skill-name">VS Code</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span class="skill-name">Browser Developer Tools</span>
+                            <div class="bar-wrapper">
+                                <div class="skill-bar" data-level="85%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -210,8 +266,16 @@
     <section id="projects" class="projects-section common-padding">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="htmlcssjs">HTML/CSS/JS</button>
+                <button class="filter-btn" data-filter="bootstrap">Bootstrap</button>
+            </div>
+            <br>
+            
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-tech="htmlcssjs bootstrap">
                     <h3 class="project-title">Food Delivery Application</h3>
                     <p class="project-tech">HTML, CSS, JavaScript, Bootstrap</p>
                     <p class="project-description">Comprehensive food delivery web application developed as a college project.</p>
@@ -222,7 +286,7 @@
                     </ul>
                     <a href="#" class="view-project-btn"><i class="fas fa-eye btn-icon"></i> View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tech="htmlcssjs bootstrap">
                     <h3 class="project-title">E-commerce Shopping Website</h3>
                     <p class="project-tech">HTML, CSS, Bootstrap, JavaScript</p>
                     <p class="project-description">Fully functional online shopping platform.</p>
@@ -233,7 +297,7 @@
                     </ul>
                     <a href="https://e-commerce-website-xi-lilac.vercel.app" class="view-project-btn"><i class="fas fa-eye btn-icon"></i> View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-tech="htmlcssjs">
                     <h3 class="project-title">Personal Portfolio Collection</h3>
                     <p class="project-tech">HTML, CSS, JavaScript, Bootstrap</p>
                     <p class="project-description">Multiple portfolio websites showcasing web development skills.</p>
@@ -252,7 +316,16 @@
         <div class="container text-center">
             <h2 class="section-title">Let's Work Together</h2>
             <p class="contact-tagline">"Ready to bring your web ideas to life with clean, responsive, and optimized solutions."</p>
-            <a href="mailto:Sandippandit896@gmail.com" class="btn primary-btn contact-btn"><i class="fas fa-envelope btn-icon"></i> Contact Me</a>
+            
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form-layout">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn contact-btn">
+                    <i class="fas fa-paper-plane btn-icon"></i> Send Message
+                </button>
+                <p id="form-status" class="form-status-message"></p>
+            </form>
         </div>
     </section>
 
@@ -268,120 +341,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    const themeToggle = document.getElementById('theme-toggle');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const sections = document.querySelectorAll('section');
-
-    // --- 1. THEME TOGGLE LOGIC (Dark/Light/Night) ---
-    // 0: Dark (default), 1: Light, 2: Night
-    let currentThemeIndex = 0; 
-    const themes = ['theme-dark', 'theme-light', 'theme-night'];
-    const themeIcons = ['fas fa-sun', 'fas fa-moon', 'fas fa-cloud-moon'];
-
-    // Load saved theme or default to 0
-    const savedTheme = localStorage.getItem('portfolioTheme');
-    if (savedTheme !== null) {
-        currentThemeIndex = parseInt(savedTheme);
-        body.classList.add(themes[currentThemeIndex]);
-        themeToggle.querySelector('i').className = themeIcons[currentThemeIndex];
-    } else {
-         body.classList.add(themes[0]);
-    }
-
-    const switchTheme = () => {
-        // Remove current theme class
-        body.classList.remove(themes[currentThemeIndex]);
-
-        // Move to the next theme (cycle 0 -> 1 -> 2 -> 0)
-        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-
-        // Apply new theme class and icon
-        body.classList.add(themes[currentThemeIndex]);
-        themeToggle.querySelector('i').className = themeIcons[currentThemeIndex];
-
-        // Save new theme preference
-        localStorage.setItem('portfolioTheme', currentThemeIndex);
-    };
-
-    themeToggle.addEventListener('click', switchTheme);
-
-
-    // --- 2. HAMBURGER MENU LOGIC ---
-    const closeMenu = () => {
-        navMenu.classList.remove('open');
-        menuToggle.querySelector('i').className = 'fas fa-bars'; // Change icon back to bars
-    };
-    
-    menuToggle.addEventListener('click', () => {
-        const isMenuOpen = navMenu.classList.toggle('open');
-        // Toggle the icon between bars and times (X)
-        menuToggle.querySelector('i').className = isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
-    });
-
-    // Close menu when a link is clicked (important for mobile UX)
-    navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-
-    // --- 3. SMOOTH SCROLLING AND ACTIVE NAV LINK LOGIC (Original Functionality) ---
-
-    // Smooth scrolling for navigation links
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                const targetElement = document.querySelector(targetId);
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - navbarHeight - 20; 
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    // Intersection Observer for highlighting active section in navbar
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '-30% 0px -70% 0px', // When the top 30% of a section hits the viewport, it becomes active.
-        threshold: 0
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const currentId = entry.target.id;
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // Set initial active link for 'Home'
-    if (navLinks.length > 0) {
-        navLinks[0].classList.add('active'); 
-    }
-});
-    </script>
-     </body>
+    <script src="script.js"></script>
+</body>
 </html>
