@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <head>
-  <title>Sandeep Pandit - Full Stack Web Developer | Portfolio & Projects</title>
-  <meta name="description" content="Aspiring Full Stack Web Developer with hands-on experience in frontend and backend technologies. Explore my projects, achievements, and contact info." />
-  <meta name="keywords" content="Sandeep Pandit, Full Stack Developer, Web Developer, React, Node.js, Portfolio, Frontend Developer" />
-  <meta name="author" content="Sandeep Pandit" />
-  <meta property="og:title" content="Sandeep Pandit - Full Stack Web Developer" />
-<meta property="og:description" content="Passionate developer crafting responsive and modern web applications using React, Node.js, and MongoDB." />
-<meta property="og:image" content="https://www.sandeeppandit.shop/images/profile-banner.jpg" />
-<meta property="og:url" content="https://www.sandeeppandit.shop" />
-<meta property="og:type" content="website" />
+    <title>Sandeep Pandit - Full Stack Web Developer | Portfolio & Projects</title>
+    <meta name="description" content="Aspiring Full Stack Web Developer with hands-on experience in frontend and backend technologies. Explore my projects, achievements, and contact info." />
+    <meta name="keywords" content="Sandeep Pandit, Full Stack Developer, Web Developer, React, Node.js, Portfolio, Frontend Developer" />
+    <meta name="author" content="Sandeep Pandit" />
+    <meta property="og:title" content="Sandeep Pandit - Full Stack Web Developer" />
+    <meta property="og:description" content="Passionate developer crafting responsive and modern web applications using React, Node.js, and MongoDB." />
+    <meta property="og:image" content="https://www.sandeeppandit.shop/images/profile-banner.jpg" />
+    <meta property="og:url" content="https://www.sandeeppandit.shop" />
+    <meta property="og:type" content="website" />
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -30,11 +29,11 @@
 }
 </script>
 </head>
-<body>
+<body class="theme-dark">
     <header class="navbar">
         <div class="container nav-container">
             <h1 class="logo">Sandeep Lalbabu Pandit</h1>
-            <nav>
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -42,6 +41,14 @@
                     <li><a href="#contact">Contacts</a></li>
                 </ul>
             </nav>
+            <div class="navbar-controls">
+                <button id="theme-toggle" class="btn-icon-only" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -57,10 +64,10 @@
                     <a href="Sandeep Pandit Resume.pdf" download="Sandeep Pandit CV.pdf" target="_blank" class="btn secondary-btn">My resume</a>
                 </div>
                 <div class="social-links hero-social-links">
-                    <a href="https://www.linkedin.com/in/sandeep-lalbabu-pandit-ba144a242/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/sandip89600" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:Sandippandit896@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+917058222107"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://www.linkedin.com/in/sandeep-lalbabu-pandit-ba144a242/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/sandip89600" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:Sandippandit896@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917058222107" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
                 </div>
             </div>
             <div class="hero-image">
@@ -109,7 +116,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="technical-skills" class="technical-skills-section common-padding">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
@@ -252,49 +259,103 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-social-links">
-                <a href="https://www.linkedin.com/in/sandeep-lalbabu-pandit-ba144a242/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/sandip89600" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:Sandippandit896@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+917058222107"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://www.linkedin.com/in/sandeep-lalbabu-pandit-ba144a242/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/sandip89600" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:Sandippandit896@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+917058222107" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
             </div>
             <p class="copyright">&copy; 2025 All rights reserved by Sandeep Pandit.</p>
         </div>
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const sections = document.querySelectorAll('section');
+
+    // --- 1. THEME TOGGLE LOGIC (Dark/Light/Night) ---
+    // 0: Dark (default), 1: Light, 2: Night
+    let currentThemeIndex = 0; 
+    const themes = ['theme-dark', 'theme-light', 'theme-night'];
+    const themeIcons = ['fas fa-sun', 'fas fa-moon', 'fas fa-cloud-moon'];
+
+    // Load saved theme or default to 0
+    const savedTheme = localStorage.getItem('portfolioTheme');
+    if (savedTheme !== null) {
+        currentThemeIndex = parseInt(savedTheme);
+        body.classList.add(themes[currentThemeIndex]);
+        themeToggle.querySelector('i').className = themeIcons[currentThemeIndex];
+    } else {
+         body.classList.add(themes[0]);
+    }
+
+    const switchTheme = () => {
+        // Remove current theme class
+        body.classList.remove(themes[currentThemeIndex]);
+
+        // Move to the next theme (cycle 0 -> 1 -> 2 -> 0)
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+
+        // Apply new theme class and icon
+        body.classList.add(themes[currentThemeIndex]);
+        themeToggle.querySelector('i').className = themeIcons[currentThemeIndex];
+
+        // Save new theme preference
+        localStorage.setItem('portfolioTheme', currentThemeIndex);
+    };
+
+    themeToggle.addEventListener('click', switchTheme);
+
+
+    // --- 2. HAMBURGER MENU LOGIC ---
+    const closeMenu = () => {
+        navMenu.classList.remove('open');
+        menuToggle.querySelector('i').className = 'fas fa-bars'; // Change icon back to bars
+    };
+    
+    menuToggle.addEventListener('click', () => {
+        const isMenuOpen = navMenu.classList.toggle('open');
+        // Toggle the icon between bars and times (X)
+        menuToggle.querySelector('i').className = isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
+    });
+
+    // Close menu when a link is clicked (important for mobile UX)
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+
+    // --- 3. SMOOTH SCROLLING AND ACTIVE NAV LINK LOGIC (Original Functionality) ---
+
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
+    navLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            if (targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-            if (targetElement) {
-                // Calculate position considering the fixed navbar
-                const offsetTop = targetElement.offsetTop - navbarHeight - 20; // Added extra padding
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-
-                // Optional: Add active class to navbar link (simple logic, can be improved for multiple sections in view)
-                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - navbarHeight - 20; 
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
 
     // Intersection Observer for highlighting active section in navbar
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar nav ul li a');
-
     const observerOptions = {
         root: null, // viewport
-        rootMargin: '-50% 0px -50% 0px', // When 50% of the section is in view
+        rootMargin: '-30% 0px -70% 0px', // When the top 30% of a section hits the viewport, it becomes active.
         threshold: 0
     };
 
@@ -316,21 +377,11 @@
         sectionObserver.observe(section);
     });
 
-    // Set initial active link on load
-    // This is a simple approach; for more robust, check current scroll position
-    const initialSection = document.querySelector('section[id]:not([id="hero"])'); // Avoid 'hero' as active initially if scrolled down
-    if (initialSection) {
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${initialSection.id}`) {
-                link.classList.add('active');
-            }
-        });
-    } else if (navLinks.length > 0) {
-        navLinks[0].classList.add('active'); // Default to home if no other section is in view
+    // Set initial active link for 'Home'
+    if (navLinks.length > 0) {
+        navLinks[0].classList.add('active'); 
     }
 });
-</script>
-
-
-</body>
+    </script>
+     </body>
 </html>
