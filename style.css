@@ -487,8 +487,8 @@ p {
 .skill-bar {
     height: 100%;
     background: var(--accent-orange);
-    width: 0; /* Initial width for animation */
-    transition: width 1.5s ease-out; /* Animation effect */
+    width: 0; 
+    transition: width 1.5s ease-out; 
     position: relative;
 }
 
@@ -882,7 +882,7 @@ p {
         font-weight: 600;
     }
 
-    /* 2. Hero Section Adjustments */
+    /* 2. Hero Section Adjustments (Stacks content) */
     .hero-section .hero-inner {
         flex-direction: column;
         text-align: center;
