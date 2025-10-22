@@ -49,6 +49,8 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* FIX: Prevents horizontal scrolling/overflow on mobile */
+    overflow-x: hidden;
 }
 
 .container {
@@ -900,9 +902,11 @@ p {
         margin-bottom: 0;
     }
 
+    /* FIX: Corrected centering for social links */
     .hero-social-links {
+        justify-content: center; /* Ensures centering within the text-aligned container */
         position: relative;
-        left:90px;
+        left: initial; /* REMOVE any manual left offset */
     }
 
     .hero-image img {
