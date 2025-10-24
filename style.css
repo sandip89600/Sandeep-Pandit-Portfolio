@@ -297,7 +297,7 @@ p {
     position: relative;
 }
 
-.hero-image img {
+picture img {
     width: 380px; 
     height: 380px; 
     border-radius: 50%;
@@ -308,7 +308,7 @@ p {
     transition: transform 0.3s ease;
 }
 
-.hero-image img:hover {
+picture img:hover {
     transform: scale(1.02);
 }
 
