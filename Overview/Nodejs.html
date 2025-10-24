@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Node.js</title>
+    <link rel="shortcut icon" href="../favicon_io/android-chrome-192x192.png" type="image/x-icon">
+<link rel="shortcut icon" href="../favicon_io/android-chrome-512x512.png" type="image/x-icon">
+<link rel="shortcut icon" href="../favicon_io/favicon-32x32.png" type="image/x-icon">
+<link rel="shortcut icon" href="../favicon_io/favicon-16x16.png" type="image/x-icon">
+<link rel="shortcut icon" href="../favicon_io/favicon.ico" type="image/x-icon">
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a clean, modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background */
+            transition: background-color 0.3s ease;
+        }
+        .concept-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Header Section (Updated for Node.js) -->
+        <header class="text-center mb-12 py-8 bg-white rounded-xl shadow-lg">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-700 tracking-tight mb-2">
+                Node.js: The JavaScript Runtime
+            </h1>
+            <p class="text-xl text-gray-600 font-medium">
+                A powerful, open-source runtime environment for server-side JavaScript execution.
+            </p>
+        </header>
+
+        <!-- What is Node.js Section (Updated Content) -->
+        <section class="mb-16">
+            <div class="bg-gray-800 text-white p-8 rounded-xl concept-card">
+                <h2 class="text-3xl font-bold mb-4 flex items-center">
+                    <svg class="w-8 h-8 mr-3 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4m0 0l-4-4"></path></svg>
+                    What is Node.js?
+                </h2>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Node.js is not a programming language or a framework; it's a **JavaScript runtime environment** that allows developers to execute JavaScript code outside of a web browser (typically on a server). It's built on Chrome's V8 JavaScript engine, enabling JavaScript to handle file system operations, networking, and other server-side tasks, making it a powerful tool for full-stack development.
+                </p>
+            </div>
+        </section>
+
+        <!-- Core Concepts Grid (Updated for Node.js) -->
+        <section>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Core Principles of Node.js</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- 1. V8 Engine -->
+                <div class="p-6 bg-white rounded-xl concept-card border-t-4 border-indigo-500">
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-3" role="img" aria-label="Chrome Logo">🚀</span>
+                        <h3 class="text-2xl font-semibold text-gray-900">1. V8 Engine</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Node.js utilizes the high-performance **V8 engine**, the same engine that powers Google Chrome. V8 compiles JavaScript directly into native machine code, which is why Node.js is incredibly fast and efficient at executing complex code logic on the server.
+                    </p>
+                </div>
+
+                <!-- 2. Non-blocking I/O -->
+                <div class="p-6 bg-white rounded-xl concept-card border-t-4 border-pink-500">
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-3" role="img" aria-label="Clock">⏳</span>
+                        <h3 class="text-2xl font-semibold text-gray-900">2. Non-blocking I/O</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        This is the key to Node's performance. Instead of waiting for tasks like database queries or file reading to complete (**blocking**), Node.js immediately starts the next task (**non-blocking**). When the long operation finishes, it notifies Node.js via a callback.
+                    </p>
+                </div>
+
+                <!-- 3. Event Loop -->
+                <div class="p-6 bg-white rounded-xl concept-card border-t-4 border-green-500">
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-3" role="img" aria-label="Infinity Symbol">🔁</span>
+                        <h3 class="text-2xl font-semibold text-gray-900">3. Single-Threaded Event Loop</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Node.js operates on a single thread. The **Event Loop** is the mechanism that manages non-blocking I/O operations, efficiently handling concurrent requests without spawning multiple threads, which saves system resources and increases scalability. 
+                    </p>
+                </div>
+
+                <!-- 4. NPM (Node Package Manager) -->
+                <div class="p-6 bg-white rounded-xl concept-card border-t-4 border-yellow-500">
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-3" role="img" aria-label="Package Box">📦</span>
+                        <h3 class="text-2xl font-semibold text-gray-900">4. NPM (Node Package Manager)</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        NPM is the largest ecosystem of open-source libraries in the world, and it comes bundled with Node.js. It allows developers to easily install, share, and manage project dependencies, enabling rapid development using established community code.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Callout -->
+        <footer class="mt-16 text-center text-gray-500 pt-8 border-t border-gray-200">
+            <p>&copy; Built with HTML and Tailwind CSS to demonstrate Node.js's concepts.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
