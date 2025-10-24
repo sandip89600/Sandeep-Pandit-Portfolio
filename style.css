@@ -992,3 +992,72 @@ picture img:hover {
         justify-content: center;
     }
 }
+/* 📱 Mobile View Adjustments */
+@media (max-width: 768px) {
+  /* Fix header overlap */
+  header.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--background-color, #0b1221);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  body {
+    padding-top: 70px; /* space for fixed navbar */
+  }
+
+  /* Adjust hero section spacing */
+  .hero-section {
+    padding: 80px 20px 60px;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
+  .hero-section p {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons alignment and spacing */
+  .hero-section .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero-section .buttons button,
+  .hero-section .buttons a {
+    width: 90%;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  /* Social icons spacing */
+  .hero-section .social-icons {
+    justify-content: center;
+    gap: 16px;
+    margin-top: 15px;
+  }
+
+  /* About section */
+  .about-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
