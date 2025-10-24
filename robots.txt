@@ -1,0 +1,6 @@
+# Tells all search engine bots to crawl the entire site
+User-agent: *
+Allow: /
+
+# Directs Google to the location of the XML sitemap (Crucial for discovery)
+Sitemap: https://www.sandeeppandit.shop/sitemap.xml
