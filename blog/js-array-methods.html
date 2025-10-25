@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>5 Essential JavaScript Array Methods You Must Know | Sandeep Pandit Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="Boosting performance and simplifying code with map, filter, reduce, and other essential JavaScript array methods. Practical examples included." />
+    <meta name="keywords" content="JavaScript, Array Methods, map, filter, reduce, find, some, Web Development, Coding Tips" />
+    <meta name="author" content="Sandeep Pandit" />
+    <meta property="og:title" content="5 Essential JavaScript Array Methods You Must Know" />
+    <meta property="og:type" content="article" />
+    <style>
+        /* Styling for Code Blocks in Blog Articles */
+.article-body pre {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-border-radius);
+    padding: 15px;
+    overflow-x: auto; /* Allows horizontal scrolling for long lines */
+    margin-bottom: 25px;
+}
+
+.article-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e6e6e6; /* Light gray for code text */
+    line-height: 1.5;
+    display: block;
+}
+    </style>
+    <link rel="stylesheet" href="../style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+<body class="theme-dark">
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo"><a href="../index.html">Sandeep Pandit</a></h1>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html#hero">Home</a></li>
+                    <li><a href="../index.html#blog" class="active">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="article-content" class="blog-article-section common-padding">
+        <div class="container article-container">
+            
+            <header class="article-header">
+                <p class="blog-meta">
+                    <span class="blog-tag">JavaScript</span> 
+                    <span class="blog-date"> | September 28, 2025</span>
+                </p>
+                <h1 class="article-title">5 Essential JavaScript Array Methods You Must Know</h1>
+                <p class="article-subtitle">Stop using verbose loops! Learn how to use **map**, **filter**, and **reduce** to write cleaner, more functional JavaScript code.</p>
+                <div class="article-author">
+                    <i class="fas fa-user-circle"></i> Written by Sandeep Pandit
+                </div>
+            </header>
+
+            <article class="article-body">
+
+                <p>When working with data in web development, **Arrays** are fundamental. Mastering their built-in methods is crucial for writing clean, readable, and efficient JavaScript. These modern methods allow for functional programming, treating data manipulation as a series of transformations rather than imperative loops.</p>
+
+                <p>Here are five array methods that will instantly elevate your code quality, complete with practical examples:</p>
+
+                <hr>
+
+                <h2 class="article-sub-heading">1. The Transformer: `map()`</h2>
+                <p>The `map()` method is used to **transform** an array by applying a function to every element and returning a **new array** of the same length.</p>
+                
+                <h3 class="component-title">Use Case: Converting Currency</h3>
+                <pre><code>
+const pricesUSD = [10, 25, 40];
+const conversionRate = 83; // INR per USD
+
+const pricesINR = pricesUSD.map(price => price * conversionRate);
+// Result: [830, 2075, 3320]
+                </code></pre>
+
+                <hr>
+
+                <h2 class="article-sub-heading">2. The Selector: `filter()`</h2>
+                <p>The `filter()` method creates a **new array** containing all elements that pass a test implemented by the provided function. It's used for **selection** or subset creation.</p>
+                
+                <h3 class="component-title">Use Case: Finding Active Users</h3>
+                <pre><code>
+const users = [
+  { name: 'Alice', active: true },
+  { name: 'Bob', active: false },
+  { name: 'Charlie', active: true }
+];
+
+const activeUsers = users.filter(user => user.active === true);
+/*
+Result: [
+  { name: 'Alice', active: true },
+  { name: 'Charlie', active: true }
+]
+*/
+                </code></pre>
+
+                <hr>
+
+                <h2 class="article-sub-heading">3. The Aggregator: `reduce()`</h2>
+                <p>The `reduce()` method executes a **reducer function** (callback) on each element of the array, resulting in a **single output value**. This method is powerful for summing up values, flattening arrays, or counting elements.</p>
+                
+                <h3 class="component-title">Use Case: Calculating a Total Score</h3>
+                <pre><code>
+const scores = [85, 92, 78, 95];
+
+// accumulator (acc) starts at 0 (the second argument)
+const totalScore = scores.reduce((acc, score) => acc + score, 0); 
+// Result: 350
+                </code></pre>
+
+                <hr>
+
+                <h2 class="article-sub-heading">4. The First Match: `find()`</h2>
+                <p>The `find()` method returns the **first element** in the array that satisfies the provided testing function. Unlike `filter()`, it stops immediately after the first match and returns the element itself (not an array).</p>
+                
+                <h3 class="component-title">Use Case: Locating a Specific Item</h3>
+                <pre><code>
+const products = [
+  { id: 101, name: 'Laptop' },
+  { id: 102, name: 'Mouse' },
+  { id: 103, name: 'Keyboard' }
+];
+
+const targetId = 102;
+const mouseProduct = products.find(product => product.id === targetId);
+// Result: { id: 102, name: 'Mouse' }
+                </code></pre>
+
+                <hr>
+
+                <h2 class="article-sub-heading">5. The Quick Checker: `some()`</h2>
+                <p>The `some()` method tests whether at least **one element** in the array passes the test implemented by the provided function. It returns a **Boolean** (`true` or `false`). It's a highly optimized way to check for the existence of an element that meets certain criteria.</p>
+                
+                <h3 class="component-title">Use Case: Checking Permissions</h3>
+                <pre><code>
+const userRoles = ['editor', 'viewer'];
+
+const canPublish = userRoles.some(role => role === 'admin' || role === 'editor');
+// Result: true 
+                </code></pre>
+
+                <hr>
+
+                <h2 class="article-sub-heading">Conclusion: Write Functional Code</h2>
+                <p>By moving from traditional `for` and `while` loops to these functional methods, you make your intentions clearer and your code significantly more declarative. This is a core principle of modern JavaScript development, especially when working with frameworks like React, which rely heavily on efficient array manipulation.</p>
+
+                <p class="cta-text">Ready to implement these powerful methods in your next project? <a href="../index.html#contact">Let's discuss how clean, functional JavaScript can bring your ideas to life!</a></p>
+
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+        <p class="copyright">&copy; 2025 All rights reserved by <a href="https://x.com/sandippandit896"
+                    target="_blank">Sandeep Pandit</a></p>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script> 
+</body>
+</html>

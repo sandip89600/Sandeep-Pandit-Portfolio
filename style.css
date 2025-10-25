@@ -747,6 +747,112 @@ picture img:hover {
     text-decoration: underline;
 }
 
+/* --- Blog Section Styles --- */
+
+/* Ensures blog section uses the correct padding from the common-padding class */
+.blog-section {
+    background-color: var(--bg-dark); /* or --card-bg, depending on your section flow */
+}
+
+.blog-grid {
+    display: grid;
+    /* 3 columns on large screens, responsive on smaller ones */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    overflow: hidden; /* Ensures image corners are rounded */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent card size */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-tag {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: var(--bg-dark);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.blog-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes the 'read more' link to the bottom */
+}
+
+.read-more-btn {
+    display: inline-block;
+    color: var(--accent-orange);
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 0.9em;
+    transition: margin-left 0.3s ease;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+    margin-left: 5px; /* Subtle movement on hover */
+}
+
+.blog-date {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8em;
+    margin-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 10px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .blog-grid {
+        /* Forces single column on very small screens if minmax isn't enough */
+        grid-template-columns: 1fr;
+    }
+}
 /* --- Contact Section (Form Styles) --- */
 .contact-section {
     background-color: var(--card-bg);
