@@ -46,10 +46,10 @@ body {
     line-height: 1.6;
     color: var(--text-light);
     background-color: var(--bg-dark);
+    /* Improved transition for all color changes */
     transition: background-color 0.5s ease, color 0.5s ease; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* FIX: Prevents horizontal scrolling/overflow on mobile */
     overflow-x: hidden;
 }
 
@@ -121,6 +121,7 @@ p {
     text-align: center;
     font-size: 0.95em;
     cursor: pointer;
+    justify-content: center; /* Ensure internal content is centered */
 }
 
 .btn-icon {
@@ -238,6 +239,7 @@ p {
     padding: 100px 0;
     display: flex;
     align-items: center;
+    /* Use min-height 100vh for full viewport height minus navbar */
     min-height: calc(100vh - 80px); 
 }
 
@@ -538,7 +540,7 @@ picture img:hover {
     border-color: var(--accent-orange);
 }
 
-/* --- Experience Section --- */
+/* --- Experience Section (Timeline Correction) --- */
 .experience-section {
     background-color: var(--card-bg);
 }
@@ -550,13 +552,14 @@ picture img:hover {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
-    padding-left: 20px; 
+    /* Adjusted for visual timeline line on the left */
+    padding-left: 50px; 
 }
 
 .experience-timeline::before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: 20px; /* Position of the vertical line */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -570,15 +573,17 @@ picture img:hover {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
-    margin-left: 40px; 
+    /* Adjusted margin to make space for the dot/line */
+    margin-left: 20px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Timeline Dot */
 .timeline-card::before {
     content: '';
     position: absolute;
-    left: -50px; 
-    top: 35px; 
+    left: -40px; /* Positioned relative to the line at left: 20px */
+    top: 30px; /* Adjusted top for a centered dot */
     width: 16px;
     height: 16px;
     background-color: var(--accent-orange);
@@ -597,6 +602,7 @@ picture img:hover {
     justify-content: space-between;
     align-items: baseline; 
     margin-bottom: 5px;
+    flex-wrap: wrap; /* Added for responsiveness on small screens */
 }
 
 .timeline-card .job-title {
@@ -687,6 +693,7 @@ picture img:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Visibility for JavaScript filtering (kept from original) */
 .project-card.hidden {
     display: none;
     opacity: 0;
@@ -902,11 +909,9 @@ picture img:hover {
         margin-bottom: 0;
     }
 
-    /* FIX: Corrected centering for social links */
+    /* Corrected centering for social links */
     .hero-social-links {
-        justify-content: center; /* Ensures centering within the text-aligned container */
-        position: relative;
-        left: initial; /* REMOVE any manual left offset */
+        justify-content: center;
     }
 
     .hero-image img {
@@ -916,8 +921,9 @@ picture img:hover {
         box-shadow: 0 0 0 8px var(--card-bg), 0 0 0 10px var(--border-color);
     }
     
-    /* 3. Timeline Adjustment */
+    /* 3. Timeline Adjustment (Single column, dots centered on cards) */
     .experience-timeline {
+        /* Remove padding for vertical line on the side */
         padding-left: 0; 
         max-width: 600px; 
         margin-left: auto;
@@ -925,17 +931,20 @@ picture img:hover {
     }
 
     .experience-timeline::before {
+        /* Center the vertical line */
         left: 50%;
         transform: translateX(-50%);
     }
 
     .timeline-card {
-        margin-left: 0;
+        /* Remove margin offset */
+        margin-left: 0; 
         margin-bottom: 40px;
         width: 100%; 
     }
 
     .timeline-card::before {
+        /* Center the dot over the line */
         left: 50%;
         transform: translateX(-50%);
         top: -20px; 
@@ -969,6 +978,7 @@ picture img:hover {
     }
 
     .about-stats {
+        /* One column on smaller screens for better spacing */
         grid-template-columns: 1fr; 
     }
     .stat-item, .service-card {
@@ -992,5 +1002,3 @@ picture img:hover {
         justify-content: center;
     }
 }
-
-
