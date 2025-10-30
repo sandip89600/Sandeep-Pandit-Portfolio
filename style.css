@@ -1050,7 +1050,6 @@ picture img:hover {
     }
 
     .timeline-card::before {
-        /* Center the dot over the line */
         left: 50%;
         transform: translateX(-50%);
         top: -20px; 
@@ -1084,7 +1083,6 @@ picture img:hover {
     }
 
     .about-stats {
-        /* One column on smaller screens for better spacing */
         grid-template-columns: 1fr; 
     }
     .stat-item, .service-card {
@@ -1102,7 +1100,6 @@ picture img:hover {
     }
 
     .project-filters {
-        /* Allow buttons to wrap better on small screens */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
