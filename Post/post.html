@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Post - Dark Mode</title>
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .post {
+    background-color: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    width: 620px;
+    padding: 18px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Profile Section */
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .headline {
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .time {
+    font-size: 12px;
+    color: #777;
+  }
+
+  /* Content Section */
+  .content {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #eaeaea;
+  }
+
+  .content a {
+    color: #3fa9f5;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .content a:hover {
+    text-decoration: underline;
+  }
+
+  .hashtags {
+    margin-top: 10px;
+    color: #3fa9f5;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Certificate Section */
+  .certificate {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+  }
+
+  .certificate img {
+    width: 50%;
+    display: block;
+  }
+
+  /* Actions */
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 10px;
+  }
+
+  .action {
+    color: #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .action:hover {
+    color: #3fa9f5;
+  }
+
+  .emoji {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="post">
+  <!-- Profile Section -->
+  <div class="profile">
+    <img src="../WhatsApp Image 2025-07-21 at 21.45.20_bcb045ba.jpg" alt="Profile">
+    <div class="profile-info">
+      <span class="name">Sandeep Lalbabu Pandit</span>
+      <span class="headline">AI-Integrated Full-Stack Developer | Passionate About Computer Science | Building Intelligent Solutions</span>
+      <span class="time">7mo</span>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    Excited to Share My Web Development Internship Completion! <br><br>
+
+    I'm thrilled to announce that I have successfully completed my Web Development Internship.
+    This experience has been invaluable in enhancing my technical skills, problem-solving abilities,
+    and understanding of real-world development workflows. <br><br>
+
+    Throughout this internship, I gained hands-on experience with Web development and I am ready to collaborate 
+    with a talented team and tackling real-world challenges has further strengthened my passion for web development. <br><br>
+
+    A big thank you <a href="#">YHills</a> and my mentors for their guidance and support throughout this journey. 
+    Looking forward to applying these skills in future projects and opportunities! <br><br>
+
+    <span class="hashtags">
+      #WebDevelopment #Internship #Learning #Growth #ComputerScience
+    </span>
+  </div>
+
+  <!-- Certificate Image Section -->
+  <div class="certificate">
+    <img src="https://media.licdn.com/dms/image/v2/D4D22AQGSIxuyyQYWvA/feedshare-shrink_2048_1536/B4DZVwd64NHIAo-/0/1741348648792?e=2147483647&v=beta&t=wdNgM3xp9W6dVKXaMndyE-kfPqtFVe6Ckmf8s_2ARDU" alt="Certificate Left">
+    <img src="https://media.licdn.com/dms/image/v2/D4D22AQHvgGstE2aIIg/feedshare-shrink_1280/B4DZVwd63KGcAo-/0/1741348647929?e=2147483647&v=beta&t=m1NBx5Zeg2-zuidEkx1LvP53kNVqRG1fhsOBrq3MlmU" alt="Certificate Right">
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <div class="action"><span class="emoji">👍</span> Like</div>
+    <div class="action"><span class="emoji">💬</span> Comment</div>
+    <div class="action"><span class="emoji">↗️</span> Share</div>
+  </div>
+</div>
+
+<script>
+  // Select all certificate images
+  const certImages = document.querySelectorAll('.certificate img');
+
+  certImages.forEach(img => {
+    img.addEventListener('click', () => {
+      // Open the clicked image in a new window/tab
+      window.open(img.src, '_blank', 'width=900,height=700');
+    });
+  });
+</script>
+
+</body>
+</html>

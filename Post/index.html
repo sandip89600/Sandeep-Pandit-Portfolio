@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Post - Dark Mode</title>
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .post {
+    background-color: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    width: 600px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .headline {
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  .time {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .content {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #eaeaea;
+  }
+
+  .content a {
+    color: #3fa9f5;
+    text-decoration: none;
+  }
+
+  .content a:hover {
+    text-decoration: underline;
+  }
+
+  .certificate {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+  }
+
+  .certificate img {
+    width: 100%;
+    display: block;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 10px;
+  }
+
+  .action {
+    color: #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .action:hover {
+    color: #3fa9f5;
+  }
+
+  .emoji {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="post">
+  <div class="profile">
+    <img src="../WhatsApp Image 2025-07-21 at 21.45.20_bcb045ba.jpg" alt="Profile">
+    <div class="profile-info">
+      <span class="name">Sandeep Lalbabu Pandit</span>
+      <span class="headline">AI-Integrated Full-Stack Developer | Passionate About Computer Science | Building Intelligent Solutions</span>
+      <span class="time">1y</span>
+    </div>
+  </div>
+
+  <div class="content">
+    I have Completed 👌💻 Web development internship Course through <a href="#">MyDailyWork</a><br><br>
+    Thank you 🙏
+  </div>
+
+  <div class="certificate">
+    <img src="https://media.licdn.com/dms/image/v2/D4D22AQFi7ZWjy7QwJA/feedshare-shrink_800/feedshare-shrink_800/0/1725814269063?e=2147483647&v=beta&t=04j3DKeAfK1GeuxSHcBO5m00x3p8LLXLy0pd_NAqQV8" alt="Certificate of Completion">
+  </div>
+
+  <div class="actions">
+    <div class="action"><span class="emoji">👍</span> Like</div>
+    <div class="action"><span class="emoji">💬</span> Comment</div>
+    <div class="action"><span class="emoji">↗️</span> Share</div>
+  </div>
+</div>
+<script>
+  // Select the certificate image
+  const certImage = document.querySelector('.certificate img');
+
+  // When clicked, open in a new popup window
+  certImage.addEventListener('click', () => {
+    window.open(certImage.src, '_blank', 'width=900,height=700');
+  });
+</script>
+
+</body>
+</html>
