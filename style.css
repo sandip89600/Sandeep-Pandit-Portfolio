@@ -1105,3 +1105,90 @@ picture img:hover {
         justify-content: center;
     }
 }
+
+/* --- Pricing Section Specific Styles --- */
+.pricing-grid {
+    display: grid;
+    /* 3 columns on desktop, then wraps */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.pricing-card {
+    background-color: var(--card-bg); /* Use card background for separation */
+    padding: 35px;
+    border-radius: var(--card-border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.plan-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+}
+
+.plan-desc {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    height: 3em; /* Fixed height for visual consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.plan-price {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    /* Separator between features */
+    border-top: 1px solid var(--border-color); 
+    width: 100%;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    /* Add an icon/indicator for features */
+    position: relative;
+    padding-left: 25px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Feature Checkmark Icon */
+.plan-features li::before {
+    content: '✓'; 
+    color: var(--accent-orange);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+}
+
+.pricing-card .primary-btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+}
