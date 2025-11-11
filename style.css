@@ -956,155 +956,6 @@ picture img:hover {
 }
 
 
-/* --- Responsive Adjustments (Mobile First) --- */
-
-@media (max-width: 1024px) {
-    /* 1. Navbar: Hamburger Menu Styles */
-    .menu-toggle, .btn-icon-only {
-        display: block; 
-    }
-
-    .navbar nav {
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-dark);
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        max-height: 0; 
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-    }
-
-    .navbar nav.open {
-        max-height: 300px; 
-        padding: 10px 0;
-    }
-
-    .navbar nav ul {
-        flex-direction: column;
-        padding: 10px 25px;
-        gap: 15px;
-    }
-
-    .navbar nav ul li a {
-        display: block;
-        padding: 10px 0;
-        text-align: left;
-        color: var(--text-light);
-        font-size: 1.1em;
-        font-weight: 600;
-    }
-
-    /* 2. Hero Section Adjustments (Stacks content) */
-    .hero-section .hero-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 60px;
-    }
-
-    .hero-content {
-        order: 2; 
-        min-width: unset;
-        width: 100%;
-    }
-
-    .hero-image {
-        order: 1; 
-        margin-bottom: 0;
-    }
-
-    /* Corrected centering for social links */
-    .hero-social-links {
-        justify-content: center;
-    }
-
-    .hero-image img {
-        width: 300px;
-        height: 300px;
-        border-width: 6px;
-        box-shadow: 0 0 0 8px var(--card-bg), 0 0 0 10px var(--border-color);
-    }
-    
-    /* 3. Timeline Adjustment (Single column, dots centered on cards) */
-    .experience-timeline {
-        /* Remove padding for vertical line on the side */
-        padding-left: 0; 
-        max-width: 600px; 
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .experience-timeline::before {
-        /* Center the vertical line */
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .timeline-card {
-        /* Remove margin offset */
-        margin-left: 0; 
-        margin-bottom: 40px;
-        width: 100%; 
-    }
-
-    .timeline-card::before {
-        left: 50%;
-        transform: translateX(-50%);
-        top: -20px; 
-    }
-
-    .skills-grid, .project-grid {
-        grid-template-columns: 1fr; 
-    }
-
-    .about-stats {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .common-padding {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-
-    .hero-content .name {
-        font-size: 2.5em;
-    }
-
-    .hero-content .title {
-        font-size: 1.8em;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr; 
-    }
-    .stat-item, .service-card {
-        max-width: 300px; 
-        margin: 0 auto;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .project-filters {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
 
 /* --- Pricing Section Specific Styles --- */
 .pricing-grid {
@@ -1251,4 +1102,177 @@ picture img:hover {
     padding: 8px 18px;
     font-size: 0.85em;
     margin-top: auto;
+}
+
+
+/* --- Responsive Adjustments (Mobile First) --- */
+
+@media (max-width: 1024px) {
+    /* 1. Navbar: Hamburger Menu Styles (Unchanged - they are correct) */
+    .menu-toggle, .btn-icon-only {
+        display: block; 
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .navbar nav.open {
+        max-height: 300px; 
+        padding: 10px 0;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        padding: 10px 25px;
+        gap: 15px;
+    }
+
+    .navbar nav ul li a {
+        display: block;
+        padding: 10px 0;
+        text-align: left;
+        color: var(--text-light);
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+
+    /* 2. Hero Section Adjustments (Stacks content) */
+    .hero-section {
+        /* ADJUSTMENT 1: Ensure hero section uses more vertical space on tablets */
+        min-height: 80vh; 
+        padding: 80px 0; /* Adjusted padding for better fit */
+    }
+
+    .hero-section .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-content {
+        order: 2; 
+        min-width: unset;
+        width: 100%;
+    }
+
+    .hero-image {
+        order: 1; 
+        margin-bottom: 0;
+    }
+
+    /* Corrected centering for social links */
+    .hero-social-links {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 300px;
+        height: 300px;
+        border-width: 6px;
+        box-shadow: 0 0 0 8px var(--card-bg), 0 0 0 10px var(--border-color);
+    }
+    
+    /* 3. Timeline Adjustment (Single column, dots centered on cards) (Correct - No changes needed) */
+    .experience-timeline {
+        padding-left: 0; 
+        max-width: 600px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .experience-timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-card {
+        margin-left: 0; 
+        margin-bottom: 40px;
+        width: 100%; 
+    }
+
+    .timeline-card::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px; 
+    }
+
+    /* Grid Layouts (Skills, Projects) */
+    .skills-grid, .project-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    /* ADJUSTMENT 2: Reduce overall section padding on small mobiles */
+    .common-padding {
+        padding: 50px 0; 
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .hero-section {
+        min-height: unset; /* Allow height to collapse naturally on small screens */
+        padding: 60px 0; 
+    }
+    
+    .hero-content .name {
+        font-size: 2.5em;
+    }
+
+    .hero-content .title {
+        font-size: 1.8em;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr; 
+    }
+    /* Set a max-width and center for single column items on small screens */
+    .stat-item, .service-card, .resume-card, .pricing-card {
+        max-width: 350px; 
+        margin: 0 auto 30px auto;
+        width: 100%;
+    }
+    
+    /* Buttons in Hero area should stack for max usability */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .project-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ADJUSTMENT 3: Ensure standard desktop hero is taller */
+@media (min-width: 1025px) {
+    .hero-section {
+        /* Height adjustment: increase the padding or min-height slightly on large screens */
+        min-height: 100vh; 
+        padding: 120px 0; 
+    }
 }
