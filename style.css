@@ -318,7 +318,7 @@ picture img:hover {
     display: flex;
     gap: 20px;
     margin-top: 20px;
-    justify-content: center; 
+    justify-content: flex-start; 
 }
 
 .social-links.hero-social-links a {
