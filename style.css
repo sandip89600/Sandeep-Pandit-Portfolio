@@ -917,44 +917,139 @@ picture img:hover {
     height: 1.5em; 
 }
 
-/* --- Footer --- */
+/* --- Footer Styles (Professional Refinement) --- */
+
 .footer {
     background-color: var(--bg-dark);
-    padding: 30px 0;
-    text-align: center;
     border-top: 1px solid var(--border-color);
+    padding-top: 50px; /* Increased padding from 30px */
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+/* New Grid Layout for Columns */
+.footer-content-grid {
+    display: grid;
+    /* Creates 3 columns that collapse easily on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Shared Title for Columns */
+.footer-col-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* 1. Brand/Logo Column */
+.footer-brand {
+    /* Ensures the brand area is left-aligned on desktop */
+    text-align: left; 
+}
+
+.footer-logo {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--accent-orange); /* Highlight your name */
+    margin-bottom: 5px;
+}
+
+.footer-tagline {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+/* 2. Quick Links Column */
+.footer-links-col {
+    /* Ensures links column is neatly aligned */
+    text-align: left;
+}
+
+.footer-links-list li {
+    margin-bottom: 10px;
+}
+
+.footer-links-list a {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    transition: color 0.3s;
+}
+
+.footer-links-list a:hover {
+    color: var(--accent-orange);
+}
+
+/* 3. Contact & Social Column */
+.footer-contact-social {
+    text-align: left;
 }
 
 .footer-social-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
+    margin-bottom: 25px;
+    /* Remove original centered alignment */
+    justify-content: flex-start; 
 }
 
 .footer-social-links a {
     color: var(--text-muted);
-    font-size: 1.5em;
-    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 1.6em; /* Slightly larger icon size */
+    transition: color 0.3s, transform 0.2s;
 }
 
 .footer-social-links a:hover {
     color: var(--accent-orange);
     transform: translateY(-3px);
-    text-decoration: none;
+}
+
+.footer-contact-info p {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.footer-contact-info a {
+    color: var(--text-muted);
+}
+
+.footer-contact-info a:hover {
+    color: var(--accent-orange);
+}
+
+.footer-icon {
+    margin-right: 10px;
+    color: var(--accent-orange);
+}
+
+/* Copyright Bar (Bottom Strip) */
+.footer-bottom-bar {
+    background-color: var(--card-bg); /* Use card background for a nice separator strip */
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .copyright {
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: var(--text-muted);
-    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 0; /* Ensures no extra spacing at the bottom of the section */
 }
 
+/* Responsive adjustment for small mobiles (stack everything) */
+@media (max-width: 600px) {
+    .footer-content-grid {
+        grid-template-columns: 1fr;
+        text-align: center; /* Center all columns on mobile */
+    }
+    .footer-social-links {
+        justify-content: center; /* Center social icons on mobile */
+    }
+    .footer-brand, .footer-links-col, .footer-contact-social {
+        text-align: center;
+    }
+}
 
 
 /* --- Pricing Section Specific Styles --- */
